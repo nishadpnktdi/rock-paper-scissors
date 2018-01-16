@@ -1,0 +1,54 @@
+<script>
+//
+// Computer Player random string function.
+//
+const CHOISES=[
+'rock',
+'paper',
+'scissors'
+];
+function computerPlay(){
+	let randomString=Math.floor(Math.random()*CHOISES.length);
+	let randomChoice=CHOISES[randomString];
+// To change first letter to capital and return.
+	return randomChoice.charAt(0).toUpperCase() + randomChoice.slice(1);
+};
+//
+//Function for player selection and validating the selection.
+//
+function playerSelection("string"){
+	let lower=string.toLowerCase();
+	(lower=='rock'||lower=='paper'||lower='scissors')?return lower : console.log("Please enter a valid item from \'Rock\', \'Paper\' or \'Scissors\'.");
+}
+//
+// Function for single round.
+//
+function playRound(playerSelection, computerSelection) {
+	if(playerSelection==computerSelection){
+		return console.log("It's a tie! Shoot again.")
+	}
+	else if(playerSelection=="rock"&&computerSelection=="paper"){
+		return console.log("You lose! " +computerSelection+ "beats " +playerSelection );
+	}
+	else if(playerSelection=="rock"&&computerSelection=="scissors"){
+		return console.log("You win! " +playerSelection+" beats" +computerSelection );
+	}
+	else if(playerSelection=="paper"&&computerSelection=="rock"){
+		return console.log("You win! " +playerSelection+" beats" +computerSelection );
+	}
+	else if (playerSelection=="paper"&&computerSelection=="scissors") {
+		return console.log("You lose! " +computerSelection+ "beats " +playerSelection );
+	}
+	else if (playerSelection=="scissors"&&computerSelection=="rock") {
+		return console.log("You lose! " +computerSelection+ "beats " +playerSelection);
+	}
+	else if (playerSelection="scissors"&&computerSelection="paper") {
+		return console.log("You win! " +playerSelection+" beats" +computerSelection );
+	}
+}
+
+	const playerSelection = 'rock'
+	const computerSelection = computerPlay()
+	console.log(playRound(playerSelection, computerSelection))
+
+</script>
