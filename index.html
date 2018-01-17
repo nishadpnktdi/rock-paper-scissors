@@ -16,9 +16,14 @@ function computerPlay(){
 //
 //Function for player selection and validating the selection.
 //
-function playerSelection("string"){
+function playerSelection(string){
 	let lower=string.toLowerCase();
-	(lower=='rock'||lower=='paper'||lower='scissors')?return lower : console.log("Please enter a valid item from \'Rock\', \'Paper\' or \'Scissors\'.");
+	if(lower=='rock'||lower=='paper'||lower=='scissors'){
+		 return lower}
+		 else{
+
+		console.log("Please enter a valid item from \'Rock\', \'Paper\' or \'Scissors\'.");
+	}
 }
 //
 // Function for single round.
@@ -42,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
 	else if (playerSelection=="scissors"&&computerSelection=="rock") {
 		return console.log("You lose! " +computerSelection+ "beats " +playerSelection);
 	}
-	else if (playerSelection="scissors"&&computerSelection="paper") {
+	else if (playerSelection="scissors"&&computerSelection=="paper") {
 		return console.log("You win! " +playerSelection+" beats" +computerSelection );
 	}
 }
