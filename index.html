@@ -7,7 +7,7 @@ const CHOISES=[
 'paper',
 'scissors'
 ];
-function computerPlay(){
+let computer=function computerPlay(){
 	let randomString=Math.floor(Math.random()*CHOISES.length);
 	let randomChoice=CHOISES[randomString];
 // To change first letter to capital and return.
@@ -16,44 +16,43 @@ function computerPlay(){
 //
 //Function for player selection and validating the selection.
 //
-function playerSelection(string){
+function playerSelection(){
+	let string=prompt("Enter your choice.");
 	let lower=string.toLowerCase();
 	if(lower=='rock'||lower=='paper'||lower=='scissors'){
-		 return lower}
+		 let playerOutput=lower.charAt(0).toUpperCase() + lower.slice(1);
+		 return playerOutput;
+		}
 		 else{
 
 		console.log("Please enter a valid item from \'Rock\', \'Paper\' or \'Scissors\'.");
 	}
-}
+};
 //
 // Function for single round.
 //
-function playRound(playerSelection, computerSelection) {
-	if(playerSelection==computerSelection){
-		return console.log("It's a tie! Shoot again.")
-	}
-	else if(playerSelection=="rock"&&computerSelection=="paper"){
+function playRound(playerSelection, computer) {
+	if(playerSelection==="Rock"&&computer==="Paper"){
 		return console.log("You lose! " +computerSelection+ "beats " +playerSelection );
 	}
-	else if(playerSelection=="rock"&&computerSelection=="scissors"){
+	else if(playerSelection==="Rock"&&computer==="Scissors"){
 		return console.log("You win! " +playerSelection+" beats" +computerSelection );
 	}
-	else if(playerSelection=="paper"&&computerSelection=="rock"){
+	else if(playerSelection==="Paper"&&computer==="Rock"){
 		return console.log("You win! " +playerSelection+" beats" +computerSelection );
 	}
-	else if (playerSelection=="paper"&&computerSelection=="scissors") {
+	else if (playerSelection==="Paper"&&computer==="Scissors") {
 		return console.log("You lose! " +computerSelection+ "beats " +playerSelection );
 	}
-	else if (playerSelection=="scissors"&&computerSelection=="rock") {
+	else if (playerSelection==="Scissors"&&computer==="Rock") {
 		return console.log("You lose! " +computerSelection+ "beats " +playerSelection);
 	}
-	else if (playerSelection="scissors"&&computerSelection=="paper") {
+	else if (playerSelection==="Scissors"&&computer==="Paper") {
 		return console.log("You win! " +playerSelection+" beats" +computerSelection );
 	}
-}
-
-	const playerSelection = 'rock'
-	const computerSelection = computerPlay()
-	console.log(playRound(playerSelection, computerSelection))
+	else{
+		return console.log("It's a tie! Shoot again.");
+	}
+};
 
 </script>
